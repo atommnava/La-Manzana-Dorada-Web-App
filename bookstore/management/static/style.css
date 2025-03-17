@@ -39,3 +39,32 @@
     width: 150px;
     height: 80px;
 }
+
+.search-bar {
+    display: flex;
+    align-items: center;
+    margin-right: 20px; /* Para separarlo de los botones */
+}
+
+.search-bar input {
+    padding: 5px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 375px; /* Ancho de la barra de búsqueda */
+}
+
+.search-bar button {
+    padding: 5px 10px;
+    margin-left: 5px;
+    font-size: 16px;
+    background-color: brown;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.search-bar button:hover {
+    background-color: saddlebrown;
+}
