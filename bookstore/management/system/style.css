@@ -40,30 +40,68 @@
     height: 80px;
 }
 
+/* Conectar el Front end con la base de datos */
+.catalog-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 20px;
+    justify-content: center;
+}
+
+.book-card {
+    width: 200px;
+    padding: 15px;
+    border-radius: 10px;
+    background-color: #fff;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+.book-cover {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
+.buy-button {
+    background-color: #28a745;
+    color: white;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.buy-button:hover {
+    background-color: #218838;
+}
+
+/*
 .search-bar {
     display: flex;
     align-items: center;
     margin-right: 20px;
-    margin-left: 1050px;
-    margin-top: -65px;
-    /* margin: -65px 1000px; */
+    margin-left: 1000px;
+    margin-top: -100px;
 }
 
 .search-bar input {
     padding: 5px;
     font-size: 16px;
-    border: 1px #EEDDC2;
-    background: #EEDBD2;
+
+    border: 1px #9A694A;
+    background: #9A694A;
     border-radius: 5px;
-    width: 450px; /* Ancho de la barra de búsqueda */
+    width: 450px;
 }
 
 .search-bar button {
     padding: 5px 10px;
     margin-left: 5px;
     font-size: 16px;
-    background-color: #EEDDC2;
-    color: #EEDDC2;
+    background-color: #9A694A;
+    color: #9A694A;
     border: none;
     border-radius: 5px;
     cursor: pointer;
@@ -73,4 +111,4 @@
     background-color: #EEDDC2;
 }
 
-/* Conectar el Front end con la base de datos */
+*/

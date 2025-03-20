@@ -3,10 +3,12 @@
  * mysql2: Cliente para conectarse a MySQL
  * cors: Middleware que permite que el front end acceda al backend sin resgricciones de origen
  */
+// http://localhost:3000/api/books
 const express = require('express');
 const mysql = require('mysql2');
 const cors = require('cors');
 
+const path = require('path');
 
 /* Configuración de aplicación
  * app inicializa una instancia de Express, que es el servidor web
@@ -22,6 +24,8 @@ const port = 3000;
  */
 app.use(cors());
 app.use(express.json());
+// Hacer accesible la carpeta public
+app.use('/public', express.static('public'));
 
 /* Configuración de la conexión a MySQL
  * localhost -> MySQL está corriendo en la misma maquina
@@ -29,7 +33,6 @@ app.use(express.json());
  * password: '' Contraseña
  * database. Base de datos a la que nos conectamos
  */
-
 const db = mysql.createConnection({
    host: 'localhost',
    user: 'root',
@@ -53,14 +56,19 @@ db.connect(err => {
  * Si la consulta es exitosa, envia los libros en formato JSON al frontend
  */
 app.get('/api/books', (req, res) => {
-   db.query('SELECT * FROM books', (err, results) => {
-       if (err) {
-           console.error('Error al obtener los libros: ', err);
-           res.status(500).json({ error: 'Error en el servidor'});
-       } else {
-           res.json(results);
-       }
-   });
+    db.query('SELECT * FROM books', (err, results) => {
+        if (err) {
+            console.error('Error al obtener libros:', err);
+            res.status(500).json({ error: 'Error en el servidor' });
+        } else {
+            // Agregar la URL completa de la imagen
+            const booksWithFullImagePath = results.map(book => ({
+                ...book,
+                cover_image: `http://localhost:${port}/public/${book.cover_image}`
+            }));
+            res.json(booksWithFullImagePath);
+        }
+    });
 });
 
 /* Arrancamos el servidor
@@ -68,7 +76,7 @@ app.get('/api/books', (req, res) => {
  * Muestra en la terminal: "Servidor corriendo en http://localhost:3000".
  */
 app.listen(port, () => {
-   console.log(`Servidor ejecutandose en http://localhost:${port}`);
+    console.log(`Servidor corriendo en http://localhost:${port}`);
 });
 
 
