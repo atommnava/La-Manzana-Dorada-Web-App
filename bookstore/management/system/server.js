@@ -1,3 +1,18 @@
+require('dotenv').config();
+
+const db = mysql.createConnection({
+    host: process.env.DB_HOST,
+    user: process.env.DB_USER,
+    password: process.env.DB_PASS,
+    database: process.env.DB_NAME
+});
+
+const port = process.env.PORT || 3000;
+app.listen(port, () => {
+    console.log(`Servidor corriendo en http://localhost:${port}`);
+});
+
+
 /* Importación de modulos
  * express: framework para crear el servidor
  * mysql2: Cliente para conectarse a MySQL
