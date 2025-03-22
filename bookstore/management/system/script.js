@@ -2,7 +2,6 @@ document.addEventListener("DOMContentLoaded", () => {
     fetchBooks();
 });
 
-/*
 function fetchBooks() {
     fetch("http://localhost:3000/api/books")  // Llamamos al backend
         .then(response => response.json())
@@ -11,7 +10,7 @@ function fetchBooks() {
         })
         .catch(error => console.error("Error al obtener los libros:", error));
 }
-*/
+
 fetch("https://tu-backend-render.com/api/books") // Usa la URL del backend
     .then(response => response.json())
     .then(books => {
