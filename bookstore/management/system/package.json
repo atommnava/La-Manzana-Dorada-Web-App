@@ -4,5 +4,10 @@
     "express": "^4.21.2",
     "mysql": "^2.18.1",
     "mysql2": "^3.14.0"
+  },
+
+  "scripts": {
+    "start": "node server.js"
   }
+
 }
