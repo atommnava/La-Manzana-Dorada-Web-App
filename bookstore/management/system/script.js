@@ -1,9 +1,3 @@
-function searchBooks()
-{
-    let input = document.getElementById("searchInput").value.toLowerCase();
-    alert("Buscando: " + input);
-}
-
 document.addEventListener("DOMContentLoaded", () => {
     fetchBooks();
 });
@@ -27,11 +21,13 @@ function displayBooks(books) {
 
         bookElement.innerHTML = `
             <img src="${book.cover_image}" alt="${book.title}" class="book-cover">
-            <h3>${book.title}</h3>
-            <p><strong>Autor:</strong> ${book.author}</p>
+            <h5>${book.title}</h5>
+            <p>${book.author}</p>
+            <!--
             <p><strong>Género:</strong> ${book.genre}</p>
             <p><strong>Precio:</strong> $${book.price}</p>
-            <button class="buy-button">Comprar</button>
+            -->
+            <!-- <button class="buy-button">Comprar</button> -->
         `;
 
         catalog.appendChild(bookElement);
