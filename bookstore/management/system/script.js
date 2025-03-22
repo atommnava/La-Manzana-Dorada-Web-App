@@ -11,12 +11,12 @@ function fetchBooks() {
         .catch(error => console.error("Error al obtener los libros:", error));
 }
 
-fetch("https://tu-backend-render.com/api/books") // Usa la URL del backend
+fetch("https://la-manzana-dorada-web-app.onrender.com/api/books") // Usa la URL de Render
     .then(response => response.json())
     .then(books => {
         displayBooks(books);
-    });
-
+    })
+    .catch(error => console.error("Error al obtener los libros:", error));
 
 function displayBooks(books) {
     const catalog = document.getElementById("book-catalog");
