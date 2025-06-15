@@ -2,17 +2,17 @@
 const books = [
     {
         id: 1,
-        title: "1984",
-        author: "George Orwell",
-        price: 299.50,
-        image: "1984.png"
+        title: "¿Quieres Salir Conmigo?",
+        author: "Atom Nava",
+        price: 0.00,
+        image: "19842.png"
     },
     {
         id: 2,
-        title: "Cien Años de Soledad",
-        author: "Gabriel García Márquez",
-        price: 199.00,
-        image: "cien_anios.png"
+        title: "¿Me darías tu # de telefono?",
+        author: "Atom Nava",
+        price: 0.00,
+        image: "cien_anios2.png"
     },
     {
         id: 3,
@@ -70,7 +70,7 @@ function displayBooks() {
         button.addEventListener('click', function() {
             const bookId = parseInt(this.getAttribute('data-id'));
             const book = books.find(b => b.id === bookId);
-            alert(`"${book.title}" añadido al carrito`);
+            alert(`"${book.title}" añadido al carrito!`);
             // Aquí podrías añadir lógica para el carrito
         });
     });
